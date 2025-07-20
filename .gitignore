@@ -44,6 +44,12 @@ Thumbs.db
 logs/
 *.log
 
+# Jenkins
+jenkins_home/
+
+# Docker
+.docker/
+
 # Runtime data
 pids
 *.pid

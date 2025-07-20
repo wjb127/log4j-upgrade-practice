@@ -37,17 +37,30 @@
    cd log4j-upgrade-practice
    ```
 
-2. **Maven 의존성 설치**
+2. **Jenkins 설정 (선택사항)**
+   Log4j 업그레이드를 Jenkins 파이프라인으로 연습하려면:
+   
+   ```bash
+   # Jenkins 자동 설정 및 시작
+   ./jenkins/setup.sh
+   
+   # Jenkins 접속: http://localhost:8081
+   # 계정: admin / 비밀번호: admin123
+   ```
+   
+   자세한 내용은 [Jenkins 설정 가이드](jenkins/README-Jenkins.md)를 참조하세요.
+
+3. **Maven 의존성 설치**
    ```bash
    mvn clean install
    ```
 
-3. **Tomcat 서버 실행**
+4. **Tomcat 서버 실행**
    ```bash
    mvn tomcat7:run
    ```
 
-4. **웹 브라우저에서 접속**
+5. **웹 브라우저에서 접속**
    ```
    http://localhost:8080
    ```
