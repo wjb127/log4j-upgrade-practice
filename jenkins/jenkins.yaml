@@ -1,0 +1,53 @@
+jenkins:
+  systemMessage: "Log4j Upgrade Practice Jenkins\n\n"
+  numExecutors: 2
+  mode: NORMAL
+  labelString: ""
+  quietPeriod: 5
+  scmCheckoutRetryCount: 0
+  
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+       - id: "admin"
+         password: "admin123"
+         
+  authorizationStrategy:
+    globalMatrix:
+      permissions:
+        - "Overall/Administer:admin"
+        - "Overall/Read:authenticated"
+
+  remotingSecurity:
+    enabled: true
+
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+      
+  maven:
+    installations:
+    - name: "Maven-3.9"
+      home: "/usr/share/maven"
+      
+  jdk:
+    installations:
+    - name: "Java-17"
+      home: "/usr/lib/jvm/java-17-openjdk-amd64"
+
+unclassified:
+  location:
+    url: "http://localhost:8081/"
+    adminAddress: "admin@localhost"
+    
+  globalLibraries:
+    libraries:
+    - name: "log4j-upgrade-lib"
+      retriever:
+        modernSCM:
+          scm:
+            git:
+              remote: "https://github.com/wjb127/log4j-upgrade-practice.git" 
